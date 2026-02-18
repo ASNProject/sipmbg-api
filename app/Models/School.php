@@ -12,4 +12,9 @@ class School extends Model
         'school_phone',
         'school_capacity',
     ];
+
+    public function students()
+    {
+        return $this->hasMany(Student::class, 'school_id');
+    }
 }

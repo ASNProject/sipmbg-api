@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\SchoolController;
+use App\Http\Controllers\Api\StudentController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -15,3 +16,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // School routes
 Route::apiResource('schools', SchoolController::class);
+
+// Student routes
+Route::apiResource('students', StudentController::class);

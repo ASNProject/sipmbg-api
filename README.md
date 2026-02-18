@@ -131,6 +131,54 @@ Body:
 Route : http://127.0.0.1:8000/api/schools/{id}
 ```
 
+##### Students
+- Create (POST)
+```
+Route : http://127.0.0.1:8000/api/students
+```
+```
+Body: 
+{
+    "fingerprint_id": "F1235",
+    "student_name": "Rais",
+    "student_address": "Yogyakarta",
+    "student_phone": "081234567890",
+    "student_class":"8",
+    "school_id":"1"
+}
+```
+
+- List Data (GET)
+```
+Route : http://127.0.0.1:8000/api/students
+```
+
+- Detail Data (GET)
+```
+Route : http://127.0.0.1:8000/api/students/{id}
+```
+
+- Update Data (PUT)
+```
+Route : http://127.0.0.1:8000/api/students/{id}
+```
+```
+Body: 
+{
+    "fingerprint_id": "F1235",
+    "student_name": "Rais",
+    "student_address": "Yogyakarta",
+    "student_phone": "081234567890",
+    "student_class":"8",
+    "school_id":"1"
+}
+```
+
+- Delete Data (DELETE)
+```
+Route : http://127.0.0.1:8000/api/schools/{id}
+```
+
 
 ## Notes
 - Versi Larvel 12.0

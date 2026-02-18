@@ -20,3 +20,4 @@
 - Create initial project
 - Add Authentication 
 - Add Schools Endpoint
+- Add Students Endpoint
