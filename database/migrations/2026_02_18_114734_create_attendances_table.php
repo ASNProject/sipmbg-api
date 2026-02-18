@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('attendance_date');
             $table->time('attendance_time');
             $table->timestamps();
+
+            $table->unique(['student_id', 'attendance_date']);
         });
     }
 

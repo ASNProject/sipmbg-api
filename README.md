@@ -200,6 +200,32 @@ Route : http://127.0.0.1:8000/api/attendances/{id}
 Route : http://127.0.0.1:8000/api/attendances/{id}
 ```
 
+##### Export
+- Daily Export
+```
+Route : http://127.0.0.1:8000/api/export?type=daily
+```
+
+- Weekly Export
+```
+Route : http://127.0.0.1:8000/api/export?type=weekly
+```
+
+- Monthly Export
+```
+Route : http://127.0.0.1:8000/api/export?type=monthly
+```
+
+- All Data Range Export
+```
+Route : http://127.0.0.1:8000/api/export?type=range&start=2026-02-01&end=2026-02-10
+```
+
+- Range Per School Export
+```
+Route : http://127.0.0.1:8000/api/export?type=range&school_id=1&start=2026-02-01&end=2026-02-10
+```
+
 
 ## Notes
 - Versi Larvel 12.0
