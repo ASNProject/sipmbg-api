@@ -4,7 +4,8 @@ SIPMBG adalah aplikasi berbasis web yang dirancang untuk mengelola dan memantau 
 Melalui SIPMBG, proses pencatatan kehadiran peserta dilakukan secara cepat menggunakan metode digital fingerprint. Data presensi tersimpan secara otomatis dalam database dan dapat diakses dalam bentuk laporan.
 
 ## ✨ Features  
-- [SOON]
+- Authentication
+- Schools Endpoint
 
 
 ## ⚙️ Installation & 🚀 Usage 
@@ -19,7 +20,7 @@ git clone https://github.com/ASNProject/sipmbg-api.git
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=db_vmachine
+DB_DATABASE=db_sipmbg
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -73,185 +74,63 @@ Body:
     "password": "123456"
 }
 ```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/carpulse
-```
 
 ##### Logout
 - Post
 ```
 Route : http://127.0.0.1:8000/api/logout
 ```
-```
-Body: 
-{
-    "name": "admin",
-    "password": "123456"
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/carpulse
-```
 
 ##### Profil
 - Get 
 ```
-Route : http://127.0.0.1:8000/api/me
+Route : http://127.0.0.1:8000/api/profile
 ```
 
-##### Customer
-- Post
+##### Schools
+- Create (POST)
 ```
-Route : http://127.0.0.1:8000/api/customer
+Route : http://127.0.0.1:8000/api/schools
 ```
 ```
 Body: 
 {
-    "uid": "U1234",
-    "name": "Ahmad S",
-    "phone_number": "081234343535",
-    "role_id": "1"
+    "school_name": "SD Negeri 2 Yogyakarta",
+    "school_address": "Yogyakarta",
+    "school_phone": "0274123456",
+    "school_capacity": 200
 }
 ```
-- Get 
+
+- List Data (GET)
 ```
-Route : http://127.0.0.1:8000/api/customer
+Route : http://127.0.0.1:8000/api/schools
 ```
 
-##### Role
-- Post
+- Detail Data (GET)
 ```
-Route : http://127.0.0.1:8000/api/role
+Route : http://127.0.0.1:8000/api/schools/{id}
+```
+
+- Update Data (PUT)
+```
+Route : http://127.0.0.1:8000/api/schools/{id}
 ```
 ```
 Body: 
 {
-    "name": "Manager",
-    "description": ""
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/role
-```
-
-##### Group
-- Post
-```
-Route : http://127.0.0.1:8000/api/group
-```
-```
-Body: 
-{
-    "group_name": "Group E",
-    "limits": 20,
-    "device_id": "1",
-    "description": ""
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/group
-```
-
-##### Add Group
-- Post
-```
-Route : http://127.0.0.1:8000/api/group/{id}/product
-```
-```
-Body: 
-{
-    "product_id": "5", // group_id
+    "school_name": "SD Negeri 2 Yogyakarta",
+    "school_address": "Yogyakarta",
+    "school_phone": "0274123456",
+    "school_capacity": 200
 }
 ```
 
-##### Product
-- Post
+- Delete Data (DELETE)
 ```
-Route : http://127.0.0.1:8000/api/product
-```
-```
-Body: 
-{
-    "product_name": "Penghapus",
-    "keypad": "",
-    "description": ""
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/product
+Route : http://127.0.0.1:8000/api/schools/{id}
 ```
 
-##### Device
-- Post
-```
-Route : http://127.0.0.1:8000/api/device
-```
-```
-Body: 
-{
-    "device_name": "Device B"
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/device
-```
-
-##### Device
-- Post
-```
-Route : http://127.0.0.1:8000/api/transaction
-```
-```
-Body: 
-{
-    "uid": "U1234",
-    "device_name": "Device A",
-    "group_id": "1",
-    "product_id": "1"
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/transaction
-```
-
-##### Configuration
-- Post
-```
-Route : http://127.0.0.1:8000/api/configuration
-```
-```
-Body: 
-{
-    "name": "limit_time",
-    "status": true
-}
-```
-- Get 
-```
-Route : http://127.0.0.1:8000/api/configuration
-```
-
-##### Transaction
-- Post
-```
-Route : http://127.0.0.1:8000/api/transaction
-```
-```
-Body: 
-{
-    "uid": "U1234",
-    "device_name": "Device 1",
-    "group_id": "1",
-    "product_id": "1",
-}
-```
 
 ## Notes
 - Versi Larvel 12.0
