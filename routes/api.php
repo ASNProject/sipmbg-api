@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\SchoolController;
 use App\Http\Controllers\Api\StudentController;
+use App\Http\Controllers\Api\AttendanceController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -19,3 +20,9 @@ Route::apiResource('schools', SchoolController::class);
 
 // Student routes
 Route::apiResource('students', StudentController::class);
+
+// Attendance routes
+Route::get('/attendances', [AttendanceController::class, 'index']);
+Route::post('/attendances/{fingerprint_id}', [AttendanceController::class, 'store']);
+Route::get('/attendances/{id}', [AttendanceController::class, 'show']);
+Route::delete('/attendances/{id}', [AttendanceController::class, 'destroy']);

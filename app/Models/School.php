@@ -17,4 +17,9 @@ class School extends Model
     {
         return $this->hasMany(Student::class, 'school_id');
     }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'school_id');
+    }
 }

@@ -179,6 +179,27 @@ Body:
 Route : http://127.0.0.1:8000/api/schools/{id}
 ```
 
+##### Attendance
+- Create (POST)
+```
+Route : http://127.0.0.1:8000/api/attendances/{fingerprint_id}
+```
+
+- List Data (GET)
+```
+Route : http://127.0.0.1:8000/api/attendances
+```
+
+- Detail Data (GET)
+```
+Route : http://127.0.0.1:8000/api/attendances/{id}
+```
+
+- Delete Data (DELETE)
+```
+Route : http://127.0.0.1:8000/api/attendances/{id}
+```
+
 
 ## Notes
 - Versi Larvel 12.0

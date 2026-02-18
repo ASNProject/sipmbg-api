@@ -21,3 +21,4 @@
 - Add Authentication 
 - Add Schools Endpoint
 - Add Students Endpoint
+- Add Attendances Endpoint
